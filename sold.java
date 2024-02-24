@@ -1,6 +1,9 @@
 package dzhava;
 
-import item
+import item;
+import resource;
+import compose;
+import java.util.java.util.ArrayList;
 
 public class sold{
 	private item item;
@@ -18,13 +21,16 @@ public class sold{
 		}
 	}
 
-	public String soldinfo(List <sold> soldhist) {
+	public void soldinfo() {
 		int summ=0;
-		String outp = "";
+		String outp = this.item.getname() + " : " + Integer.toString(this.kolvo) + "=" + Integer.toString(this.profit)+"\n";
+		System.out.println(outp);
+	}
+	public void soldshist(List<sold> soldhist){
 		for (int i = 0; i < soldhist.size(); i++) {
 			outp += soldhist[i].item.getname() + ": " + Double.toString(soldhist[i].kolvo) + " = " + Double.toString(soldhist[i].profit) + "\n";
 			summ += soldhist[i].profit;
-		}outp += "profit:" + to_string(summ)+"\n"; return outp;
+		}outp += "profit:" + to_string(summ)+"\n"; System.out.println(outp);
 	}
 
 }

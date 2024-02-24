@@ -2,6 +2,8 @@ package dzhava;
 
 import java.util.Scanner;
 
+import java.util.java.util.ArrayList;
+
 public class resource{
 	
 	private String name;

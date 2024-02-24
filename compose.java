@@ -1,6 +1,6 @@
 package dzhava;
 
-import resource
+import resource;
 public class compose{
 	public List <resource> sost;
 	public unsigned int k;

@@ -1,6 +1,6 @@
 package dzhava
 
-import java.util.Vector;
+import java.util.java.util.ArrayList;
 
 import item; 
 
@@ -16,8 +16,8 @@ public static void main(String[] args) {
 		
 		ArrayList<resource> sklad = new ArrayList<resource>();
         	ArrayList<item> menu = new ArrayList<item>();	
-		ArrayList<sold> soldhist = new ArrayList<sold>();
-		ArrayList<action> acthist = new ArrayList<action>();
+		ArrayList<action> actions = new ArrayList<action>();
+		ArrayList<sold> solds = new ArrayList<action>();
 
 		resource milk = new resource();
 		resource coffee = new resource();
@@ -38,9 +38,9 @@ public static void main(String[] args) {
 
 		ArrayList <resource> cof = new ArrayList<>();
 		cof.add(coffe); cof.add(milk); cof.add(sugar);
-		ArrayList<double> cs = new ArrayList<double>(){ 0.060, 0.090, 0.060 };
-		ArrayList<double> cb = new ArrayList<double>(){ 0.10, 0.150, 0.10 };
-		ArrayList<double> am = new ArrayList<double>(){ 0.15, 0.0, 0.060 };
+		List<Double> cs = new ArrayList<>(List.of(0.060,0.090,0.060));
+		List<Double> cb = new ArrayList<>(List.of(0.10, 0.150, 0.10));
+		List<Double> am = new ArrayList<>(List.of(0.15, 0.0, 0.060));
 
 		compose capuch_small = new compose();
  		compos capuch_big = new compose();
@@ -54,30 +54,37 @@ public static void main(String[] args) {
 		item cappuchino_big = new item(); 
 		item americano = new item();
 
-		appuchino_big.setitem("cappuchino_big", 180, capuch_big, menu);
-		cappuchino_small.setitem("cappuchino_small", 100, capuch_small, menu);
-		americano.setitem("americano", 120, amer, menu);
+		cappuchino_big.setitem("cappuchino_big", 180, capuch_big);
+		cappuchino_small.setitem("cappuchino_small", 100, capuch_small);
+		americano.setitem("americano", 120, amer);
+		menu.add(cappuchino_small);menu.add(cappuchino_big);menu.add(americano);
 
 		milk.showres();
 		cappuchino_big.showsost();
 		cappuchino_big.costchange(220);
-		cappuchino_big.sostdel(1);
+		cappuchino_big.sostdel();
 		cappuchino_big.sostadd(sirop, 0.03);
-
 		cappuchino_big.showsost();
-		//cout << to_string(cappuchino_big.getcost())+"\n";
-
+		
 		sold one = new sold();
 		sold two = new sold();
 
-		one.soldinfo(soldhist);
+		one.setsold(cappuchino_big, 5);
+		solds.add(one);
+		two.setsold(cappuchino_small,10);
+		solds.add(two);
+
+		one.soldinfo();
+		soldshist(solds);
 		milk.showres();
 
 		action first = new action();
 		action second = new action();
 
-		first.setaction(milk, 2, 0, actions);
-		second.setaction(chokolate, 10, 1, actions);
+		first.setaction(milk, 2, 0);
+		actions.add(first);
+		second.setaction(chokolate, 10, 1);
+		actions.add(second);
 
 		second.acthist();
 		first.acthist();

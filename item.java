@@ -1,7 +1,7 @@
 package dzhava;
 
-import compose
-import resource
+import compose;
+import resource;
 
 public class item{
 	private String name;
@@ -16,11 +16,11 @@ public class item{
 		this.sost = n; 
 	}
 
-	public String showsost() {
+	public void showsost() {
 		String outp="";
 		for (int i = 0; i < this.sost.n.size(); i++) {
 			outp += (this.sost.sost[i].getname() + ": " + Double.toString(this.sost.n[i]) + "\n");
-		}return outp;
+		}System.out.println(outp);
 	}
 
 	public unsigned int getcost() {
@@ -39,7 +39,7 @@ public class item{
 		this.cost = b;
 	}
 
-	public void sostadd( resource res, double k) {
+	public void sostadd(resource res, double k) {
 		this.sost.sost.add(res);
 		this.sost.n.add(k);
 		this.sost.uplen();

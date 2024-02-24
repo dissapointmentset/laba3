@@ -1,5 +1,8 @@
 package dzhava;
-
+import item;
+import resource;
+import compose;
+import java.util.java.util.ArrayList;
 
 
 public class action{
@@ -20,13 +23,13 @@ public class action{
 		}else { res.reducekol(b); }
 	}
 
-	public String acthist() {
+	public void acthist() {
 		string outp = "";
 		if (this.getacttype() == 1) {
 				outp += res.getname() + ": " + Double.toString(kolvo) + "\n";
 			}
 			else { outp += res.getname() + ": " + Double.toString(kolvo * (-1)) + "\n"; }
-		return outp;
+		System.out.println(outp);
 	}
 	
 }
