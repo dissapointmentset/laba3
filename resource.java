@@ -1,8 +1,8 @@
-package dzhava;
+package laba3;
 
 import java.util.Scanner;
 
-import java.util.java.util.ArrayList;
+import java.util.ArrayList;
 
 public class resource{
 	
@@ -13,10 +13,10 @@ public class resource{
 	public String getname(){
 		return name;
 	}
-	public unsigned int getkol(){
+	public double getkol(){
 		return kolvo;
 	}
-	public string showres() {
+	public void showres() {
 		System.out.println(name + " : " + kolvo);
 	}
 	public void setresource(String imya, double kolich) {

@@ -1,16 +1,17 @@
-package dzhava;
-
-import compose;
-import resource;
+package laba3;
+import java.util.Arrays;
+import java.util.ArrayList;
+import laba3.compose;
+import laba3.resource;
 
 public class item{
 	private String name;
 
-	private unsigned int cost;
+	private int cost;
 
 	private compose sost;
 
-	public void setitem(String imya, unsigned int price, compose n) {
+	public void setitem(String imya, int price, compose n) {
 		this.name = imya;
 		this.cost = price;
 		this.sost = n; 
@@ -19,11 +20,11 @@ public class item{
 	public void showsost() {
 		String outp="";
 		for (int i = 0; i < this.sost.n.size(); i++) {
-			outp += (this.sost.sost[i].getname() + ": " + Double.toString(this.sost.n[i]) + "\n");
+			outp += (this.sost.sost.get(i).getname() + ": " + Double.toString(this.sost.n.get(i)) + "\n");
 		}System.out.println(outp);
 	}
 
-	public unsigned int getcost() {
+	public int getcost() {
 		return cost;
 	}
 
@@ -35,7 +36,7 @@ public class item{
 		return sost;
 	}
 
-	public void costchange(unsigned int b) {
+	public void costchange(int b) {
 		this.cost = b;
 	}
 
@@ -46,8 +47,8 @@ public class item{
 	}
 
 	public void sostdel() {
-		this.sost.sost = Arrays.copyOf(this.sost.sost, this.sost.sost.length-1);
-		this.sost.n = Arrays.copyOf(this.sost.n, this.sost.n.length-1);
+		this.sost.sost.remove(this.sost.sost.size()-1);
+		this.sost.n.remove(this.sost.n.size()-1);
 		this.sost.reduselen();
 	}
 

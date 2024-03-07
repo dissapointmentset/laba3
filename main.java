@@ -1,23 +1,18 @@
-package dzhava
-
-import java.util.java.util.ArrayList;
-
-import item; 
-
-import resource;
-
-import compose;
-
-import sold;
-
-import action;
-
-public static void main(String[] args) {
+package laba3;
+import java.util.ArrayList;
+import java.util.List;
+import laba3.item; 
+import laba3.resource;
+import laba3.compose;
+import laba3.sold;
+import laba3.action;
+public class main{
+	public static void main(String[] args) {
 		
 		ArrayList<resource> sklad = new ArrayList<resource>();
         	ArrayList<item> menu = new ArrayList<item>();	
 		ArrayList<action> actions = new ArrayList<action>();
-		ArrayList<sold> solds = new ArrayList<action>();
+		ArrayList<sold> solds = new ArrayList<sold>();
 
 		resource milk = new resource();
 		resource coffee = new resource();
@@ -36,14 +31,15 @@ public static void main(String[] args) {
 		sugar.consresinit();
 		sklad.add(sugar);
 
-		ArrayList <resource> cof = new ArrayList<>();
-		cof.add(coffe); cof.add(milk); cof.add(sugar);
+		
+
+		List <resource> cof = new ArrayList<>(List.of(coffee, milk, sugar));
 		List<Double> cs = new ArrayList<>(List.of(0.060,0.090,0.060));
 		List<Double> cb = new ArrayList<>(List.of(0.10, 0.150, 0.10));
 		List<Double> am = new ArrayList<>(List.of(0.15, 0.0, 0.060));
 
 		compose capuch_small = new compose();
- 		compos capuch_big = new compose();
+ 		compose capuch_big = new compose();
 		compose amer = new compose();
 
 		capuch_small.setcompose(cof, cs);
@@ -75,7 +71,7 @@ public static void main(String[] args) {
 		solds.add(two);
 
 		one.soldinfo();
-		soldshist(solds);
+		one.soldshist(solds);
 		milk.showres();
 
 		action first = new action();
@@ -90,5 +86,5 @@ public static void main(String[] args) {
 		first.acthist();
 		milk.showres();
 
-
+}
 }

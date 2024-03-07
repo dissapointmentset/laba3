@@ -1,19 +1,20 @@
-package dzhava;
-
-import resource;
+package laba3;
+import java.util.ArrayList;
+import java.util.List;
+import laba3.resource;
 public class compose{
-	public List <resource> sost;
-	public unsigned int k;
-	public List <double> n;
-	public void setcompose(List <resource> cons, List <double> m) {
-		int i = 0;
-		for (i; i < cons.size(); i++) {
-			sost.add(cons[i]);
-			n.add(m[i]);
+	public ArrayList<resource> sost = new ArrayList<>();
+	public int k;
+	public ArrayList<Double> n = new ArrayList<>(); 
+	public void setcompose(List <resource> cons, List <Double> m) {
+		int i;
+		for (i = 0; i < cons.size(); i++) {
+			sost.add(cons.get(i));
+			n.add(m.get(i));
 		}this.k = cons.size();
 	}
 
-	public unsigned int getlen() {
+	public int getlen() {
 		return k;
 	}
 	public void reduselen() {

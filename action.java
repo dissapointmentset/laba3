@@ -1,8 +1,8 @@
-package dzhava;
-import item;
-import resource;
-import compose;
-import java.util.java.util.ArrayList;
+package laba3;
+import laba3.item; 
+import laba3.resource;
+import laba3.compose;
+import java.util.ArrayList;
 
 
 public class action{
@@ -15,17 +15,17 @@ public class action{
 		return f;
 	}
 
-	public void setaction(resource a, unsigned int b, bool flag) {
+	public void setaction(resource a, int b, int flag) {
 		this.res = a;
 		this.kolvo = b;
 		this.f = flag;
-		if (f) {res.upkol(b);
+		if (f>0) {res.upkol(b);
 		}else { res.reducekol(b); }
 	}
 
 	public void acthist() {
-		string outp = "";
-		if (this.getacttype() == 1) {
+		String outp = "";
+		if (this.getacttype() >0) {
 				outp += res.getname() + ": " + Double.toString(kolvo) + "\n";
 			}
 			else { outp += res.getname() + ": " + Double.toString(kolvo * (-1)) + "\n"; }
