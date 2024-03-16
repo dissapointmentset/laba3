@@ -76,15 +76,20 @@ public class main{
 
 		action first = new action();
 		action second = new action();
+		first.count = 0;
 
 		first.setaction(milk, 2, 0);
 		actions.add(first);
 		second.setaction(chokolate, 10, 1);
 		actions.add(second);
+		first.postavki();
+		
 
 		second.acthist();
 		first.acthist();
 		milk.showres();
+
+		System.out.println(Integer.toString(first.numberof()));
 
 }
 }
