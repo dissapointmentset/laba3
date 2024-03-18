@@ -11,7 +11,8 @@ public class main{
 		
 		ArrayList<resource> sklad = new ArrayList<resource>();
         	ArrayList<item> menu = new ArrayList<item>();	
-		ArrayList<action> actions = new ArrayList<action>();
+		//ArrayList<action> actions = new ArrayList<action>();
+		action[][] actions = new action[2][1];
 		ArrayList<sold> solds = new ArrayList<sold>();
 
 		resource milk = new resource();
@@ -79,13 +80,13 @@ public class main{
 		first.count = 0;
 
 		first.setaction(milk, 2, 0);
-		actions.add(first);
+		actions[first.count/actions[0].length][first.count%actions[0].length] = first;
 		second.setaction(chokolate, 10, 1);
-		actions.add(second);
+		actions[first.count/actions[0].length][first.count%actions[0].length] = second;
 		first.postavki();
 		
 
-		second.acthist();
+		actions[1][0].acthist();
 		first.acthist();
 		milk.showres();
 

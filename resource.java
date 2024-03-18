@@ -30,9 +30,23 @@ public class resource{
         	Scanner in = new Scanner(System.in);
         	System.out.print("Input resource name:");
         	this.name = in.nextLine();
-        	System.out.print("Input resource quantity:");
-        	this.kolvo = in.nextDouble();
-        }
+		
+		boolean exit = true;
+		do{	
+			System.out.print("Input resource quantity:");
+			exit = true;		
+			try{				
+				this.kolvo = in.nextDouble(); 
+				if(this.kolvo<0){
+					throw new IllegalArgumentException("Amount of resource can not be lower than 0\n");
+					}
+				}
+			catch(IllegalArgumentException e){
+				exit = false;
+				System.out.print(e.getMessage());
+				}	
+			}while(!exit);
+		}
 
 	public void reducekol(double a) {
 		this.kolvo-=a;
