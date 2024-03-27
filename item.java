@@ -4,27 +4,29 @@ import java.util.ArrayList;
 import laba3.compose;
 import laba3.resource;
 
-public class item{
+public class item<T> extends absitem{ 
 	private String name;
 
-	private int cost;
+	private T cost;
 
 	private compose sost;
 
-	public void setitem(String imya, int price, compose n) {
+	public void setitem(String imya, T price, compose n) {
 		this.name = imya;
 		this.cost = price;
 		this.sost = n; 
 	}
 
-	public void showsost() {
+	@Override
+	public String toString(){
 		String outp="";
 		for (int i = 0; i < this.sost.n.size(); i++) {
 			outp += (this.sost.sost.get(i).getname() + ": " + Double.toString(this.sost.n.get(i)) + "\n");
-		}System.out.println(outp);
+		}
+		return outp;
 	}
-
-	public int getcost() {
+	@Override
+	public T getcost() {
 		return cost;
 	}
 
@@ -36,7 +38,7 @@ public class item{
 		return sost;
 	}
 
-	public void costchange(int b) {
+	public void costchange(T b) {
 		this.cost = b;
 	}
 
@@ -45,12 +47,11 @@ public class item{
 		this.sost.n.add(k);
 		this.sost.uplen();
 	}
-
+	@Override
 	public void sostdel() {
 		this.sost.sost.remove(this.sost.sost.size()-1);
 		this.sost.n.remove(this.sost.n.size()-1);
 		this.sost.reduselen();
 	}
-
 	
 }

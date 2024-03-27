@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 import java.util.ArrayList;
 
-public class resource{
+public class resource implements manager, Cloneable{
 	
-	private String name;
+	protected String name;
 
-	private double kolvo;
+	protected double kolvo;
 
 	public String getname(){
 		return name;
@@ -16,8 +16,9 @@ public class resource{
 	public double getkol(){
 		return kolvo;
 	}
-	public void showres() {
-		System.out.println(name + " : " + kolvo);
+	@Override
+	public String toString() {
+		return this.name + ": " + this.kolvo+"\n";
 	}
 	public void setresource(String imya, double kolich) {
 
@@ -55,4 +56,8 @@ public class resource{
 	public void upkol(double a) {
 		this.kolvo+=a;
 	}
+	@Override
+  	protected Object clone() throws CloneNotSupportedException {
+		return super.clone();
+  	}
 }
